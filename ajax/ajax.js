@@ -1,6 +1,6 @@
 // 1
 let xhr = new XMLHttpRequest();
-xhr.open('GET' 'https:// file:///Users/irinaignat/Desktop/io/irinaignatenok.github.io/')jax/data:iframe.html)
+xhr.open('GET' 'https://irinaignatenok.github.io/ajax/data.html' false)
 
 // 3
 xhr.send();
