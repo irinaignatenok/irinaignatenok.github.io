@@ -1,5 +1,5 @@
 let xhr = new XMLHttpRequest();
-xhr.open('GET' 'https://jsonplaceholder.typicode.com/users' true);
+xhr.open('GET' 'https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=dc6zaTOxFJmzC');
 xhr.reponseType = 'json';
 
 // 3
@@ -9,7 +9,7 @@ xhr.onload = function() {
 	if(xhr.status != 200) {
 		console.log(`Error: ${xhr.status}: ${xht.statusText}`)
 	} else{
- console.log(JSON.parse(xhr.response));
+ console.log(xhr.response);
 
 }
 }
