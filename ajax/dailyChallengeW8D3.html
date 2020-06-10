@@ -11,7 +11,7 @@
 		
 	</div>
 		<div id="space"></div><br>
-		<button type="submit" id="btnDelete">Delete</button>
+		<button type="submit" onclick="clearAll()">Delete</button>
 
 <script type="text/javascript">
 	
@@ -42,12 +42,14 @@ xhr.onerror = function () {
    	arr.forEach((item, i) => {
    		let div = document.createElement("div");
    		div.setAttribute("class", "main");
+   		div.setAttribute("style","margin: 5px 5px")
    		let parag = document.createElement("p");
    		let img = document.createElement("ifame");
 
 
    		parag.innerText = item.title;
    		img.setAttribute("src", item.embed_url)
+   		img.setAttribute("frameBorder","0"
    		div.appendChild(img);
    		div.appendChild(parag);
 
@@ -57,13 +59,11 @@ xhr.onerror = function () {
    }
 }
 
-let deleteItem = document.getElementById("btnDelete");
-deleteItem.addEventListener("click", deleteAll);
-function deleteAll() {
-document.getElementById("input").value = "";
-let clearAll = Array.from(document.getElementById("space"));
-clearAll.forEach(elem => elem.remove())
 
+function clearAll(){
+    document.getElementsByTagName("input")[0].value = "";
+    let results = Array.from(document.getElementsByClassName("main"));
+    results.forEach(element => element.remove()
 
 }
 
