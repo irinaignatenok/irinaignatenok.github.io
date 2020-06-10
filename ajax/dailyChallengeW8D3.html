@@ -18,7 +18,7 @@
  function getDoc() {
  let xhr = new XMLHttpRequest();
 let input = document.getElementById("input").value;
-let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" +input 
+let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" + input 
  xhr.open('GET', url);
  xhr.send();
  xhr.responseType = 'json'; 
@@ -48,7 +48,7 @@ xhr.onerror = function () {
    		p.innerText = item.title;
    		img.setAttribute("src", item.embed_url)
    		div.appendChild(img);
-   		div.appendChild(p);
+   		div.appendChild(parag);
 
 
    		space.appendChild(div);
