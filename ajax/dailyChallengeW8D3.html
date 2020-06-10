@@ -19,7 +19,7 @@
  let xhr = new XMLHttpRequest();
 let input =  document.getElementsByTagName("input")[0].value;
 
-let url = "https://api.giphy.com/v1/gifs/search?api_key=Z6GhaWEBTxywxEiyn2Sq3DgfckIEMSWd&q=" + input 
+let url ="https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" + input 
  xhr.open('GET', url);
  xhr.send();
  xhr.responseType = 'json'; 
@@ -61,7 +61,7 @@ let deleteItem = document.getElementById("btnDelete");
 deleteItem.addEventListener("click", deleteAll);
 function deleteAll() {
 document.getElementById("input").value = "";
-let clearAll = Array.from(document.document.getElementById("space"));
+let clearAll = Array.from(document.getElementById("space"));
 clearAll.forEach(elem => elem.remove())
 
 
