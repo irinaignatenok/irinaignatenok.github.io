@@ -19,7 +19,7 @@
  let xhr = new XMLHttpRequest();
 let input =  document.getElementsByTagName("input")[0].value;
 
-let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" + input 
+let url = "https://api.giphy.com/v1/gifs/search?api_key=Z6GhaWEBTxywxEiyn2Sq3DgfckIEMSWd&q=" + input 
  xhr.open('GET', url);
  xhr.send();
  xhr.responseType = 'json'; 
@@ -28,8 +28,8 @@ let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYC
 	if(xhr.status != 200) {
 		console.log(`Error: ${xhr.status}: ${xht.statusText}`)
 	} else{
-console.log(xhr.reponse.data);
-built(xhr.reponse.data)
+console.log(xhr.response.data);
+built(xhr.response.data)
 }
 }
 
