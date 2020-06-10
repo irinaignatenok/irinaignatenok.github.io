@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<label for="search">Search</label>
+		<input id="input" type="text" name="search">
+		<button type="submit" onclick="getDoc()">Go</button>
+		
+	</div>
+		<div id="space"></div><br>
+		<button type="submit" id="btnDelete">Delete</button>
+
+<script type="text/javascript">
+	
+ function getDoc() {
+ let xhr = new XMLHttpRequest();
+let input = document.getElementById("input").value;
+let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" +input 
+ xhr.open('GET', url);
+ xhr.send();
+ xhr.responseType = 'json'; 
+
+ xhr.onload = function() {
+	if(xhr.status != 200) {
+		console.log(`Error: ${xhr.status}: ${xht.statusText}`)
+	} else{
+console.log(xhr.reponse.data);
+built(xhr.reponse.data)
+}
+}
+
+xhr.onerror = function () {
+        console.log("Fail");
+    };
+
+   const built = (arr) => {
+   	const space = document.getElementById("space")
+   	arr.forEach((item, i) => {
+   		let div = document.createElement("div");
+   		div.setAttribute("class", "main");
+   		let parag = document.createElement("p");
+   		let img = document.createElement("ifame");
+
+
+   		p.innerText = item.title;
+   		img.setAttribute("src", item.embed_url)
+   		div.appendChild(img);
+   		div.appendChild(p);
+
+
+   		space.appendChild(div);
+   	})
+   }
+}
+
+let deleteItem = document.getElementById("btnDelete");
+deleteItem.addEventListener("click", deleteAll);
+function deleteAll() {
+document.getElementById("input").value = "";
+let clearAll = Array.from(document.document.getElementById("space"));
+clearAll.forEach(elem => elem.remove())
+
+
+}
+
+
+</script>
+</body>
+</html>
