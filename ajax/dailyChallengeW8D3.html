@@ -17,7 +17,8 @@
 	
  function getDoc() {
  let xhr = new XMLHttpRequest();
-let input = document.getElementById("input").value;
+let input =  document.getElementsByTagName("input")[0].value;
+
 let url = "https://api.giphy.com/v1/gifs/search?api_key=vvKKU1bKCP79BzWuM9Mo0tYCcR4h1twh&q=" + input 
  xhr.open('GET', url);
  xhr.send();
