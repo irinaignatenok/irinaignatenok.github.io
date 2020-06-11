@@ -1,5 +1,6 @@
 let xhr = new XMLHttpRequest();
-xhr.open('GET' 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=');
+let link = 'https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=';
+xhr.open('GET', link);
 xhr.reponseType = 'json';
 
 // 3
