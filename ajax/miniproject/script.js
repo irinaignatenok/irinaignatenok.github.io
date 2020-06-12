@@ -4,7 +4,7 @@ let box = document.getElementById("box");
 let random = Math.floor(Math.random() * 100);
 let url = "https://swapi.dev/api/people/" + random
 
- xhr.open('GET', url, true);
+ xhr.open('GET', url);
  xhr.send();
 
  xhr.responseType = 'json'; 
@@ -16,16 +16,21 @@ let url = "https://swapi.dev/api/people/" + random
  xhr.onload = function() {
 	if(xhr.status != 200) {
 		const box = document.getElementById("box");
-		function remove() {
-    document.getElementById("box").innerHTML = "";}
+		remove();
     let text = document.createElement("h3")
     text.innerText = "Oh no!That person isn't available."
     text.setAttribute("style", "font-size: 3em");
     box.appendChild(text)
 
 	} else{
-console.log(xhr.response.data);
-built(xhr.response, planet.response)
+		let planet = xhr.response.homeworld
+		let xhr2 = new XMLHttpRequest();
+		 xhr2.open('GET', planet);
+ 		xhr2.send();
+		xhr2.responseType = 'json'; 
+		xhr2.onload = function (){
+built(xhr.response, xhr2.response)
+}
 }
 }
 
@@ -34,9 +39,10 @@ xhr.onerror = function () {
     };
 
     function remove() {
-    document.getElementById("box").innerHTML = "";}
+    document.getElementById("box").innerHTML = "";
+}
 
-loadingimg() {
+const loadingimg = () => {
 	const box = document.getElementById("box");
 	remove()
 	let i = document.createElement("i");
