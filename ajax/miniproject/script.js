@@ -17,9 +17,9 @@ let url = "https://swapi.dev/api/people/" + random
 	if(xhr.status != 200) {
 		const box = document.getElementById("box");
 		remove();
-    let text = document.createElement("h3")
+    let text = document.createElement("h2")
     text.innerText = "Oh no!That person isn't available."
-    text.setAttribute("style", "font-size: 3em");
+    text.setAttribute("style", "font-size: 2em");
     box.appendChild(text)
 
 	} else{
